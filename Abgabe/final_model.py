@@ -63,7 +63,7 @@ device = 'cpu'
 model.to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=0.001)
-model_saved_name = "book_classification_lr_0.001_bs100_ep_5_plot_2"
+model_saved_name = "book_classification_lr_0.001_bs100_ep_5_plot_2" #model name with parameters
 
 epochs = 5
 epoch_loss_list = []
