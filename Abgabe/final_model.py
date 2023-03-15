@@ -53,7 +53,7 @@ train_dataset = (encoded_tokens_array, target_data_array)
 tensor_x = torch.Tensor(encoded_tokens_array) # transform to torch tensor
 tensor_y = torch.Tensor(target_data_array)
 
-my_dataset = TensorDataset(tensor_x,tensor_y) # create your datset
+my_dataset = TensorDataset(tensor_x,tensor_y) # create datset
 
 train_dataloader = DataLoader(dataset=my_dataset, batch_size=batch_size, shuffle=True)
 
@@ -70,7 +70,7 @@ epoch_loss_list = []
 epoch_accuracy_list = []
 
 
-for epoch in range(epochs):  # loop through epoch
+for epoch in range(epochs): 
     epoch_loss = 0
     epoch_accuracy = 0
     batch = 0
@@ -78,7 +78,7 @@ for epoch in range(epochs):  # loop through epoch
         model.train() # setting model in train mode
         data = data.to(device)
         label = label.to(device)
-        batch += 1  # sending things to cpu
+        batch += 1 
 
         output = model(data)
         reduced = torch.max(output, 1)
@@ -90,7 +90,7 @@ for epoch in range(epochs):  # loop through epoch
         optimizer.step()
 
         acc = ((output.argmax(dim=1) == label).float().mean()).item()
-        epoch_accuracy += acc / len(train_dataloader)  # adds all accuracies for an epoch together
+        epoch_accuracy += acc / len(train_dataloader)  
         epoch_loss += loss.item() / len(train_dataloader)
 
         print(f"batch {int(batch)}; "f"batch loss: {loss:.3f} ")
