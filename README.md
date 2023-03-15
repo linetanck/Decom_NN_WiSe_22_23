@@ -2,9 +2,10 @@
 Final submission Julia Hose (3044818), Karoline Tanck (3044699)
 
 ### Description of each file:
-final_model.py: our own final model enhanced with external code
 
-loss_up_model-py: own model that has a steadily rising loss
+final_model.py: own final model that has a steadily rising loss
+
+one_last_attempt.py: our model enhanced with external code
 
 keras_attempt.py: a previous independent version of the model using keras
 
